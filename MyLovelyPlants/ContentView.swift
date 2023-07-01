@@ -12,7 +12,7 @@ struct ContentView: View {
         NavigationView {
             List {
                 NavigationLink {
-                    SampleView()
+                    CalendarView()
                 } label: {
                     Text("Wanna know when to water?")
                 }

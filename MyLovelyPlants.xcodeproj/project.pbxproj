@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB5700472A500C740037C45D /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5700462A500C740037C45D /* CalendarView.swift */; };
 		BBC5526D2A4DC30A00A34249 /* MyLovelyPlantsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC5526C2A4DC30A00A34249 /* MyLovelyPlantsApp.swift */; };
 		BBC5526F2A4DC30A00A34249 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC5526E2A4DC30A00A34249 /* ContentView.swift */; };
 		BBC552712A4DC31400A34249 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBC552702A4DC31400A34249 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB5700462A500C740037C45D /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		BBC552692A4DC30A00A34249 /* MyLovelyPlants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLovelyPlants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC5526C2A4DC30A00A34249 /* MyLovelyPlantsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLovelyPlantsApp.swift; sourceTree = "<group>"; };
 		BBC5526E2A4DC30A00A34249 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +36,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB5700452A500C5F0037C45D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB5700462A500C740037C45D /* CalendarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BBC552602A4DC30A00A34249 = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +63,7 @@
 		BBC5526B2A4DC30A00A34249 /* MyLovelyPlants */ = {
 			isa = PBXGroup;
 			children = (
+				BB5700452A500C5F0037C45D /* Views */,
 				BBC5526C2A4DC30A00A34249 /* MyLovelyPlantsApp.swift */,
 				BBC5526E2A4DC30A00A34249 /* ContentView.swift */,
 				BBC552702A4DC31400A34249 /* Assets.xcassets */,
@@ -142,6 +153,7 @@
 			files = (
 				BBC5526F2A4DC30A00A34249 /* ContentView.swift in Sources */,
 				BBC5527B2A4DC9C200A34249 /* SampleView.swift in Sources */,
+				BB5700472A500C740037C45D /* CalendarView.swift in Sources */,
 				BBC5526D2A4DC30A00A34249 /* MyLovelyPlantsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

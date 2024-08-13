@@ -17,7 +17,11 @@ struct ContentView: View {
                     Text("Wanna know when to water?")
                 }
                 Text("Let's see its lovely days")
-                Text("Explanation of my lovely one")
+                NavigationLink {
+                    DescriptionView()
+                } label: {
+                    Text("Explanation of my lovely one")
+                }
             }
         }
     }

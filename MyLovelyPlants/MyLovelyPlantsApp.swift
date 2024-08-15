@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct MyLovelyPlantsApp: App {
+    static let store = Store(initialState: CalendarFeature.State()) {
+        CalendarFeature()
+//        ._printChanges()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(store: MyLovelyPlantsApp.store)
         }
     }
 }

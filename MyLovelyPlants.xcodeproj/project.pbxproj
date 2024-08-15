@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		36DA3D012C69DF78003DD7F1 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA3D002C69DF78003DD7F1 /* DescriptionView.swift */; };
+		36DA3D0D2C6DBE9D003DD7F1 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 36DA3D0C2C6DBE9D003DD7F1 /* ComposableArchitecture */; };
+		36DA3D0F2C6DC11C003DD7F1 /* CalendarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA3D0E2C6DC11C003DD7F1 /* CalendarFeature.swift */; };
 		BB5700472A500C740037C45D /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5700462A500C740037C45D /* CalendarView.swift */; };
 		BBC5526D2A4DC30A00A34249 /* MyLovelyPlantsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC5526C2A4DC30A00A34249 /* MyLovelyPlantsApp.swift */; };
 		BBC5526F2A4DC30A00A34249 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC5526E2A4DC30A00A34249 /* ContentView.swift */; };
@@ -18,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		36DA3D002C69DF78003DD7F1 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		36DA3D0E2C6DC11C003DD7F1 /* CalendarFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarFeature.swift; sourceTree = "<group>"; };
 		BB5700462A500C740037C45D /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		BBC552692A4DC30A00A34249 /* MyLovelyPlants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLovelyPlants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC5526C2A4DC30A00A34249 /* MyLovelyPlantsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLovelyPlantsApp.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36DA3D0D2C6DBE9D003DD7F1 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +45,7 @@
 		BB5700452A500C5F0037C45D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				36DA3D0E2C6DC11C003DD7F1 /* CalendarFeature.swift */,
 				BB5700462A500C740037C45D /* CalendarView.swift */,
 				36DA3D002C69DF78003DD7F1 /* DescriptionView.swift */,
 			);
@@ -100,6 +105,9 @@
 			dependencies = (
 			);
 			name = MyLovelyPlants;
+			packageProductDependencies = (
+				36DA3D0C2C6DBE9D003DD7F1 /* ComposableArchitecture */,
+			);
 			productName = MyLovelyPlants;
 			productReference = BBC552692A4DC30A00A34249 /* MyLovelyPlants.app */;
 			productType = "com.apple.product-type.application";
@@ -128,6 +136,9 @@
 				Base,
 			);
 			mainGroup = BBC552602A4DC30A00A34249;
+			packageReferences = (
+				36DA3D0B2C6DBE9D003DD7F1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = BBC5526A2A4DC30A00A34249 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -154,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36DA3D0F2C6DC11C003DD7F1 /* CalendarFeature.swift in Sources */,
 				BBC5526F2A4DC30A00A34249 /* ContentView.swift in Sources */,
 				BBC5527B2A4DC9C200A34249 /* SampleView.swift in Sources */,
 				BB5700472A500C740037C45D /* CalendarView.swift in Sources */,
@@ -359,6 +371,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		36DA3D0B2C6DBE9D003DD7F1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.12.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		36DA3D0C2C6DBE9D003DD7F1 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36DA3D0B2C6DBE9D003DD7F1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BBC552612A4DC30A00A34249 /* Project object */;
 }

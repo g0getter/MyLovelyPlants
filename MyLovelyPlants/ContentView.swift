@@ -6,13 +6,18 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ContentView: View {
+    let store: StoreOf<CalendarFeature>
+    
     var body: some View {
         NavigationView {
             List {
                 NavigationLink {
-                    CalendarView()
+                    CalendarView(
+                        store: store
+                    )
                 } label: {
                     Text("Wanna know when to water?")
                 }
@@ -29,6 +34,11 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(
+            store:
+                Store(initialState: CalendarFeature.State()) {
+                    CalendarFeature()
+                }
+        )
     }
 }

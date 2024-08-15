@@ -6,25 +6,30 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct CalendarView: View {
+    let store: StoreOf<CalendarFeature>
+    
     @State private var dates: Set<DateComponents> = [DateComponents(
         timeZone: nil, year: 2023, month: 7, day: 3)]
     @State private var selectedDates = ""
 
     var body: some View {
         if #available(iOS 16.0, *) {
-            VStack {
-                MultiDatePicker("Dates Available", selection: $dates)
-                    .tint(.orange)
-                    .onChange(of: dates, perform: { _ in
-                        formatSelectedDates(dates)
-                    })
-                Text("The days you watered")
-                    .foregroundColor(.orange)
-                ScrollView {
-                    LazyVStack {
-                        Text(selectedDates)
+            WithPerceptionTracking {
+                VStack {
+                    MultiDatePicker("Dates Available", selection: $dates)
+                        .tint(.orange)
+                        .onChange(of: dates, perform: { _ in
+                            store.send(.tapDate(dates))
+                        })
+                    Text("The days you watered")
+                        .foregroundColor(.orange)
+                    ScrollView {
+                        LazyVStack {
+                            Text(formatSelectedDates(store.selectedDates))
+                        }
                     }
                 }
             }
@@ -33,7 +38,7 @@ struct CalendarView: View {
         }
     }
     
-    private func formatSelectedDates(_ dates: Set<DateComponents>) {
+    private func formatSelectedDates(_ dates: Set<DateComponents>) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         let datesToBeFormatted = dates
@@ -42,7 +47,8 @@ struct CalendarView: View {
             }.compactMap { date in
                 dateFormatter.string(from: date)
             }
-        selectedDates = datesToBeFormatted.joined(separator: "\n") // reduce로도 가능하나 int 이용한 연산 등이 아니라서 이것보다 식이 길어짐
+        
+        return datesToBeFormatted.joined(separator: "\n") // reduce로도 가능하나 int 이용한 연산 등이 아니라서 이것보다 식이 길어짐
     }
     
     // TODO: 오름차순 정렬 - paramter type, return type 정의
@@ -52,6 +58,10 @@ struct CalendarView: View {
 
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarView()
+        CalendarView(
+            store: Store(initialState: CalendarFeature.State()) {
+                CalendarFeature()
+            }
+        )
     }
 }

@@ -31,6 +31,11 @@ struct CalendarView: View {
                             Text(formatSelectedDates(store.selectedDates))
                         }
                     }
+                    if store.isLoading {
+                        ProgressView()
+                    } else if let fact = store.fact {
+                        Text(fact)
+                    }
                 }
             }
         } else {

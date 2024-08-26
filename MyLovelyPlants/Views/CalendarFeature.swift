@@ -11,7 +11,7 @@ import ComposableArchitecture
 @Reducer
 struct CalendarFeature {
     @ObservableState
-    struct State {
+    struct State: Equatable {
         var selectedDates = Set<DateComponents>()
         var fact: String?
         var isLoading = false

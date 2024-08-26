@@ -10,12 +10,13 @@ import XCTest
 
 @testable import MyLovelyPlants
 
+@MainActor // prevents the main thread error
 final class MyLovelyPlantsTests: XCTestCase {
 
     func testMyLovelyPlants() async {
-//        let store = TestStore(initialState: CalendarFeature.State()) {
-//            CalendarFeature()
-//        }
+        let store = TestStore(initialState: CalendarFeature.State()) {
+            CalendarFeature()
+        }
         
 //        await store.send(.requestNetwork(2))
 //        print("1")

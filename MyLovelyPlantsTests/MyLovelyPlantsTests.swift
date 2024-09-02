@@ -18,10 +18,17 @@ final class MyLovelyPlantsTests: XCTestCase {
             CalendarFeature()
         }
         
-//        await store.send(.requestNetwork(2))
-//        print("1")
-//        var dateSet = Set<DateComponents>()
-//        dateSet.insert(DateComponents())
-//        await store.send(.tapDate(dateSet))
+//        let selectedDates = Set<DateComponents>()
+//        await store.send(.tapDate(selectedDates)) {
+//            $0.isLoading = true
+//            $0.selectedDates = selectedDates
+//        }
+        
+        let stringFact = "factResponse"
+        await store.send(.factResponse(stringFact)) {
+            $0.isLoading = false
+            $0.fact = stringFact
+        }
+//        await store.send(.requestNetwork(2)) {
     }
 }
